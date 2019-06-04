@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Node (val) {
+            this.value = val;
+            this.left = this.right = null;
+        }
+
+        var inp = [3,2,6,5,1,4,9,7,0,8];
+
+        function createBST (arr) {
+            var root = new Node(arr.shift());
+            var cur;
+            arr.forEach(function(el){
+                cur = root;
+                while (cur) {
+                    if (el < cur.value) {
+                        if (!cur.left) {
+                            cur.left = new Node(el);
+                            break;
+                        } else {
+                            cur = cur.left;
+                        }
+                    } else {
+                        if (!cur.right) {
+                            cur.right = new Node(el);
+                            break;   
+                        } else {
+                            cur = cur.right;
+                        }
+                    }
+                }
+            });
+            return root;
+        }
+
+        var bst = createBST(inp);
+        preOrder(bst);
+
+        function preOrder (node) {
+            if (node) {
+                console.log(node.value);
+                preOrder(node.left);
+                preOrder(node.right);
+            }
+        }
+    </script>
+</body>
+</html>

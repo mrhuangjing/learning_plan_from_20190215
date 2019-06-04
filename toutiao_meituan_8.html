@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 从一个无序，不相等的数组中，选取N个数，使其和为M实现算法
+
+
+        var a = [3,2,4,1,6,5,9,7,8], N = 3, M = 11;
+
+        var result = [], temp = [];
+
+        function solve (arr, target, start, end, nums) {
+            if (target == 0) {
+                // if (temp.length == nums) {
+                    result.push(temp);
+                // }
+                return false;
+            }
+            if (start > end) {
+                return false;
+            }
+
+            for (var i = start; i <= end; i++) {
+                if (arr[i] <= target) {
+                    temp.push(arr[i]);
+                    solve(arr, target - arr[i], i + 1, end, nums);
+                    temp = [];
+                }
+            }
+        }
+
+        solve(a, M, 0, a.length - 1, N);
+
+        console.log(result);
+    </script>
+</body>
+</html>

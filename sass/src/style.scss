@@ -1,0 +1,10 @@
+$font-size: 14px;
+
+@import 'widget.scss';
+
+$color: red;
+
+.wrapper {
+    font-size: $font-size;
+    color: $color;
+}

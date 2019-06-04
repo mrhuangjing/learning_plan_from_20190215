@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .con {
+            border: 1px solid red;
+            width: 100px;
+            /* overflow: hidden; */
+        }
+        .in {
+            width: 100px;
+            height: 100px;
+            background-color: #eee;
+            float: left;
+        }
+        .con:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        /* .clear{
+            clear: both;
+        } */
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="in"></div>
+        <!-- <div class="clear"></div> -->
+    </div>
+</body>
+</html>
+
+<!-- 清除浮动的三种方法
+    1.在浮动元素的后面添加一个div，样式设为clear:both;
+    2.父元素添加overflow:hidden;样式；
+    3.父元素添加after伪类（after相当于子元素），设置clear:both;同时需要display: block;
+-->

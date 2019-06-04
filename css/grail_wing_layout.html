@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            min-width: 700px;
+        }
+        div {
+            height: 500px;
+        }
+        .con {
+            background-color: #eee;
+            position: relative;
+            /* display: flex; */
+            padding: 0 200px 0 100px;
+        }
+        .left, .right, .middle {
+            float: left;
+            position: relative;
+        }
+        .left {
+            width: 100px;
+            background-color: red;
+            margin-left: -100%;  /* 相对于父元素的宽度而言的百分比 */
+            left: -100px;
+        }
+        .right {
+            width: 200px;
+            background-color: green;
+            margin-left: -200px;
+            right: -200px;
+        }
+        .middle {
+            width: 100%;
+            background-color: blue;
+        }
+
+        /* .left {
+            width: 100px;
+            background-color: red;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .right {
+            width: 200px;
+            background-color: green;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .middle {
+            margin: 0 200px 0 100px;
+            background-color: blue;
+        } */
+
+        /* .left {
+            width: 100px;
+            background-color: red;
+        }
+        .right {
+            width: 200px;
+            background-color: green;
+        }
+        .middle {
+            flex: 1;
+            background-color: blue;
+        } */
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="middle">放大佛挡杀佛斯蒂芬dfsdfdsfsdfsdfsdafsdfsafsdfdsaf</div>
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>
+
+<!-- 浮动+负边距+定位  实现圣杯/双飞翼布局 -->
+<!-- 绝对定位和相对定位，均可以设置top,left,right,bottom值 -->

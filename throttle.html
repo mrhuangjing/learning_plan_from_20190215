@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function throttle (fn, wait) {
+            var last = 0;
+            return function () {
+                console.log(last);
+                if (!last) {
+                    fn();
+                    last = new Date().getTime();
+                } else {
+                    var now = new Date().getTime();
+                    if (now - last >= wait) {
+                        fn();
+                        last = now;
+                    } else {
+                        console.log('未满足时间间隔');
+                    }
+                }
+            };
+            
+        }
+
+        var f = throttle(function(){
+            console.log('triggered');
+        }, 5000);
+
+        setInterval(f, 500);
+
+        // // setInterval(function(){
+        //     throttle(function(){
+        //         console.log('triggered');
+        //     }, 1000)();
+        // // }, 500);
+
+        // function out () {
+        //     var count = 1;
+        //     return function(){
+        //         count++;
+        //         console.log(count);
+        //     };
+        // }
+
+        // var f = out();
+        // f();
+        // f();
+        // f();
+    </script>
+</body>
+</html>

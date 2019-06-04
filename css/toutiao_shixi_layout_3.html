@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            min-width: 700px;
+        }
+        .wrapper {
+            height: 600px;
+            background-color: #eee;
+            display: flex;
+        }
+        .left {
+            width: 200px;
+            height: 100%;
+            background-color: red;
+        }
+        .right {
+            flex: 1;
+            background-color: green;
+            display: flex;
+            flex-direction: column;
+        }
+        .right div {
+            /* width: 100%;
+            height: 200px;
+            line-height: 200px;
+            text-align: center; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .sub1{
+            background-color: blue;
+            flex: 1;
+        }
+        .sub2{
+            background-color: yellow;
+            flex: 1;
+        }
+        .sub3{
+            background-color: purple;
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="left"></div>
+        <div class="right">
+            <div class="sub1">fjkldas;</div>
+            <div class="sub2">gffdsafds</div>
+            <div class="sub3">hthfs</div>
+        </div>
+    </div>
+</body>
+</html>
